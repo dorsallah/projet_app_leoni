@@ -51,7 +51,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>LEONI Smart Industry 4.0</h1>
+        <h1>LEONI Smart Industry 4.0.3</h1>
         <h2>DevOps Deployment Platform</h2>
         <p>Welcome to the official dashboard created and deployed automatically via Jenkins & Kubernetes.</p>
         <div class="badge">👨‍💻 Developed by: Dorsaf Sallah 2026</div>
