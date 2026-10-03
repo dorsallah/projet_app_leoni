@@ -1,3 +1,3 @@
 FROM tomcat:8
-MAINTAINER RSI 
+MAINTAINER Dorsafsallah 
 COPY webapp/target/webapp.war  /usr/local/tomcat/webapps
