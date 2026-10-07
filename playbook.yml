@@ -4,9 +4,12 @@
   gather_facts: no
   tasks:
     - name: Apply Kubernetes Deployment
-      command: kubectl apply -f /home/master-2/my-app-deployment.yaml
+      command: kubectl apply -f /home/master-2/my-app-deployment.yaml --validate=false
 
-    - name: Apply Kubernetes Service
+    - name: Delete old Kubernetes Service to avoid timeout
+      command: kubectl delete -f /home/master-2/my-app-service.yaml --ignore-not-found=true
+
+    - name: Create Kubernetes Service
       command: kubectl apply -f /home/master-2/my-app-service.yaml --validate=false
 
     - name: Force Kubernetes to pull the latest Docker image
@@ -14,3 +17,9 @@
 
     - name: Wait for Kubernetes rollout status
       command: kubectl rollout status deployment/my-app
+
+    - name: Get Kubernetes Pods status
+      command: kubectl get pods
+
+    - name: Get Kubernetes Services status
+      command: kubectl get svc
