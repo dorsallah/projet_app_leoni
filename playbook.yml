@@ -7,7 +7,7 @@
       command: kubectl apply -f /home/master-2/my-app-deployment.yaml
 
     - name: Apply Kubernetes Service
-      command: kubectl apply -f /home/master-2/my-app-service.yaml
+      command: kubectl apply -f /home/master-2/my-app-service.yaml --validate=false
 
     - name: Force Kubernetes to pull the latest Docker image
       command: kubectl rollout restart deployment/my-app
