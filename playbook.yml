@@ -2,6 +2,9 @@
 - hosts: master2
   remote_user: master-2
   gather_facts: no
+  environment:
+    KUBECONFIG: /home/master-2/.kube/config
+
   tasks:
     - name: Apply Kubernetes Deployment
       command: kubectl apply -f /home/master-2/my-app-deployment.yaml --validate=false
